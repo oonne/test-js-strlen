@@ -1,0 +1,18 @@
+{
+  "name": "test-js-strlen",
+  "version": "1.0.0",
+  "description": "PHP's strlen in JavaScript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oonne/test-js-strlen.git"
+  },
+  "author": "JAY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oonne/test-js-strlen/issues"
+  },
+  "dependencies": {
+    "mocha": "^8.0.1"
+  }
+}
