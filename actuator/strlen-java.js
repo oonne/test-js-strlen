@@ -3,24 +3,27 @@ const config = require('./config');
 
 let strlen = (str) => {
   return new Promise((resolve, reject) =>{
+    let postData = JSON.stringify({
+      "deviceSn": "str"
+    });
     let options = {
-      port: 80,
+      port: 28901,
       method: 'POST',
       headers: {
-        'Content-Type': 'text/plain; charset=UTF-8',
-        'Content-Length': Buffer.byteLength(str),
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Content-Length': Buffer.byteLength(postData),
       },
     };
-    let req = http.request(config.phpApi, options, (res) => {
+    let req = http.request(config.javaApi, options, (res) => {
       res.on('data', (chunk) => {
-        let length = chunk.toString('utf-8');
-        resolve(Number(length));
+        let res = JSON.parse(chunk);
+        resolve(res.data.count);
       });
     });
     req.on('error', (e) => {
       reject('请求失败');
     });
-    req.write(str);
+    req.write(postData);
     req.end();
   });
 }
