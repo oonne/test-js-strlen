@@ -4,7 +4,7 @@ const config = require('./config');
 let strlen = (str) => {
   return new Promise((resolve, reject) =>{
     let postData = JSON.stringify({
-      "deviceSn": "str"
+      "deviceSn": str
     });
     let options = {
       port: 28901,
