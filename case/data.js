@@ -23,6 +23,10 @@ let data = [
     name: '用例6：Unicode字符',
     text: '\u0008\u0009\u000C\uFEFF',
   },
+  {
+    name: '用例7：空字符',
+    text: '/&nbsp;  ',
+  },
 ];
 
 module.exports = data;
